@@ -1,0 +1,354 @@
+/* Import de la fuente de Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aca va el menu hamburgues*/
+
+.nav .logo img {
+    max-width: 1rem;
+    height: 50px;
+    float: left;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #1c1c1c;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+}
+
+video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.absolute {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo de la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+
+
+
+.navbar-footer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.navbar-footer a {
+    display: flex font-size: small;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-footer li {
+    list-style: none;
+}
+
+.navbar-footer li a:hover {
+    color: rgba(218, 113, 16, 0.808);
+}
+
+.navbar-footer .footer li {
+    display: block;
+
+}
+
+/* Estilo del logotipo */
+.logo a {
+    position: relative;
+    max-width: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    margin: 15px;
+}
+
+/* Estilo de los enlaces de navegación */
+.navbar-menu li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-menu li a:hover {
+    color: rgba(218, 113, 16, 0.808);
+}
+
+/* Estilo de la sección de bienvenida */
+.welcome-section {
+    background-image: url('../img/pngeggportada.png');
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.welcome-content {
+    text-align: right;
+    position: relative;
+    top: 7.5em;
+    right: 450px;
+
+}
+
+/* Estilo del contenido de bienvenida */
+.welcome-content h1 {
+    color: #201e1bc5;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.destacados {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.destacados h2 {
+    font-size: 4rem;
+
+}
+
+
+.welcome-content p {
+    color: #201e1b;
+    margin-left: 100px;
+    font-size: 2.2rem;
+    line-height: 1.6rem;
+    position: absolute;
+    text-align: center;
+    margin-top: 0;
+}
+
+.seccio2 {
+    text-align: center;
+}
+
+.seccio2 h2 {
+    margin-top: 0;
+    top: 0;
+}
+
+.seccio2 ul>li {
+    position: relative;
+    text-align: center;
+    list-style: none;
+}
+
+.welcome-content h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.welcome-content p {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Animación de texto */
+.animated-text {
+    text-shadow: 0 0 1px rgba(216, 203, 203, 0.171);
+}
+
+/* Galería deimágenes */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: minmax(200px, auto);
+    gap: 20px;
+    padding: 20px;
+    grid-auto-flow: dense;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.grid-container tile h3 {
+    position: absolute;
+    text-align: ;
+}
+
+.texto {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.grid-item:hover::before {
+    transform: scale(1) rotate(360deg);
+}
+
+.grid-item {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.grid-item:hover {
+    filter: opacity(0.9);
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.welcome-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.welcome-section:hover:before {
+    opacity: 1;
+}
+
+.redes-sociales li {
+    list-style: none;
+}
+
+.datos-contacto li {
+    list-style: none;
+}
