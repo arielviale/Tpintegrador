@@ -9,19 +9,19 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="ststic/apple-touch-icon.png"
+      href="/ststic/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon-32x32.png"
+      href="/static/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon-16x16.png"
+      href="/static/favicon-16x16.png"
     />
     <!-- Agrega los enlaces a Bootstrap CSS -->
     <link
@@ -44,27 +44,27 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a href="../index.html">
-            <img src="../logo_optimus.png" alt="Optimus Automotores" />
+          <a href="{% static '/index.html' %}">
+            <img src="/static/img/logo_optimus.png" alt="Optimus Automotores" />
           </a>
         </div>
         <ul class="navbar-menu">
           <li>
-            <a href="../index.html">Inicio</a>
+            <a href="{% url 'inicio' %}">Inicio</a>
           </li>
           <li>
-            <a href="../pages/catalogo.html">Vehículos</a>
+            <a href="{% url 'catalogo' %}">Vehículos</a>
           </li>
           <li>
-            <a href="../pages/contacto.html">Contacto</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
           </li>
           <li>
-            <a href="../pages/acerca.html">Nosotros</a>
+            <a href="{% url 'acerca' %}">Nosotros</a>
           </li>
         </ul>
       </nav>
       <video onloadedmetadata="this.muted=true" autoplay loop>
-        <source src="../img/auto.mp4" />
+        <source src="{% static './img/auto.mp4' %}" />
       </video>
     </header>
     <main>
@@ -89,7 +89,7 @@
       ></iframe>
     </div>
 
-    <script src="../js/vue.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="{% static '/js/vue.js' %}"></script>
+    <script src="{% static '/js/index.js' %}"></script>
   </body>
 </html>
