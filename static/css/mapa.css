@@ -1,5 +1,5 @@
 body {
-  
+
     width: 100%;
     font-family: 'Arial', sans-serif;
     color: #33475b;
@@ -34,10 +34,10 @@ footer {
 
 .mapa {
     height: 450px;
-    display: inline-flex; 
+    display: inline-flex;
     transform: translateY(-100px) translateX(450px);
     position: relative;
     right: 20px;
     top: -100px;
     margin-bottom: 30px;
-  }
+}
