@@ -5,7 +5,7 @@
   <head>
     <title>Formulario de Contacto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/contacto.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/contacto.css' %}" />
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
       emailjs.init("J5P-N89cmqi8oAyXw");
@@ -15,11 +15,7 @@
   <body>
     <header>
       <div class="menu">
-        <img
-          id="logo-nav"
-          src="{% static 'img/logo_optimus.png' %}"
-          alt="logo"
-        />
+        <img id="logo-nav" src="/static/img/logo_optimus.png" alt="logo" />
       </div>
       <nav>
         <ul>
@@ -108,6 +104,9 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="{% static 'js/contacto.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static '/js/contacto.js' %}"
+    ></script>
   </body>
 </html>
