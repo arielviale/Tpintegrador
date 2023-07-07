@@ -193,7 +193,7 @@ video {
 
 /* Estilo de la sección de bienvenida */
 .welcome-section {
-    background-image: url('../img/pngeggportada.png');
+    background-image: url('.static/img/pngeggportada.png');
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
