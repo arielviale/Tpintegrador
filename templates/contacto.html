@@ -84,16 +84,16 @@
             <hr />
             <ul class="navbar-footer">
               <li class="footer">
-                <a href="../index.html">Inicio</a>
+                <a href="{% url 'inicio' %}">Inicio</a>
               </li>
               <li class="footer">
-                <a href="./catalogo.html">Vehículos</a>
+                <a href="{% url 'catalogo' %}">Vehículos</a>
               </li>
               <li class="footer">
-                <a href="./contacto.html">Contacto</a>
+                <a href="{% url 'contacto' %}">Contacto</a>
               </li>
               <li class="footer">
-                <a href="./acerca.html">Nosotros</a>
+                <a href="{% url 'acerca' %}">Nosotros</a>
               </li>
             </ul>
             <hr />
@@ -104,6 +104,9 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="../js/contacto.js"></script>
+    <script
+      type="text/javascript"
+      src="{% static '/js/contacto.js' %}"
+    ></script>
   </body>
 </html>
