@@ -19,6 +19,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+APPS = [
+    "auto_app"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -28,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+INSTALLED_APPS += APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
