@@ -1,0 +1,16 @@
+{% extends 'base_venta.html' %}
+{% block content %}
+
+<main>
+    <div class="main-color-coches">
+        <h1>CREAR AUTO</h1>
+        <form method="post">
+        
+            {% csrf_token %}
+            <div>{{form.as_p}}</div>
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+        <a href="{% url 'coches:all' %}" >Volvamos al inicio</a>
+    </div>
+</main>
+{% endblock %}    
