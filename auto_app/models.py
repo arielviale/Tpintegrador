@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Coche(models.Model):
+class Coches(models.Model):
     nombre = models.CharField(max_length=200)
     rating = models.PositiveIntegerField(null=False, blank=False)
     abv    = models.FloatField(null=True, blank=True)
