@@ -1,40 +1,40 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views import View
+from .models       import Coche
+from django.urls   import reverse_lazy
+from django.views  import View
 
-from django.views.generic.list import ListView
-from django.views.generic.edit import DeleteView, UpdateView, CreateView
-from django.views.generic.detail import DetailView
+from django.views.generic.list     import ListView
+from django.views.generic.edit     import DeleteView, UpdateView, CreateView
+from django.views.generic.detail   import DetailView
 
-from .models import Coches 
+from auto_app.models  import Coche 
 
-# Create your views here.
+class CocheBaseView(View):
+    template_name = 'coche.html'
+    model       = Coche
+    fields      = '__all__'
+    success_url = reverse_lazy('coche:all')
 
-class CochesBaseView(View):
-    template_name = 'coches.html'
-    model = Coches
-    fields = '__all__'
-    success_url = reverse_lazy('coches:all')
-
-class CochesListView(CochesBaseView, ListView):
+class CocheListView(CocheBaseView, ListView):
+    ...
+        
+    
+class CocheDetailView(CocheBaseView, DetailView):
+    template_name = 'coche_detail.html'
     
     
-class CochesDetailView(CochesBaseView, CreateView):
-    template_name = 'coches_detail.html'
-    
-class CochesCreateView(CochesBaseView, CreateView):
-    template_name = 'coches_create.html'
+class CocheCreateView(CocheBaseView, CreateView):
+    template_name = 'coche_create.html'
     extra_contex = {
-        "tipo": "Crear coches"
+        "tipo": "Create Coche"
     }    
-class CochesUpdateView(CochesBaseView,UpdateView):
-    template_name = 'coches_create.html'
+class CocheUpdateView(CocheBaseView,View):
+    template_name = 'coche_create.html'
     extra_contex = {
-        "tipo": "Actualizar coches"
+        "tipo": "Update coche"
     }
 
-class CochesDeleteView(CochesBaseView,DeleteView):
-    template_name = 'coches_delete.html'
+class CocheDeleteView(CochesBaseView,View):
+    template_name = 'coche_delete.html'
     extra_contex = {
-        "tipo": "Borrar coches"
+        "tipo": "Delete coche"
     }
