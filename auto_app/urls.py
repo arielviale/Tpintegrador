@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path , include
 
-from .views import   VentaListView    ,\
+from .views import   CocheListView    ,\
                      CocheDetailView ,\
                      CocheCreateView ,\
                      CocheUpdateView ,\
@@ -10,7 +10,7 @@ from .views import   VentaListView    ,\
 app_name = "coche" 
 
 urlpatterns = [
-    path("", VentaListView.as_view(), name="all"),
+    path("", CocheListView.as_view(), name="all"),
     path("create/", CocheCreateView.as_view(), name="create"),
     path("<int:pk>/detail/", CocheDetailView.as_view(), name="detail"),
     path("<int:pk>/update/", CocheUpdateView.as_view(), name="update"),
@@ -20,9 +20,9 @@ urlpatterns = [
 from django.contrib import admin
 from django.urls    import path , include
 
-from .views         import venta
+from .views         import coche
 urlpatterns = [ 
     path('admin/', admin.site.urls),
-    path("", venta.as_view(), name="venta"),
+    path("", coche.as_view(), name="venta"),
     path("coche/", include("auto_app.urls")),
 ]     
