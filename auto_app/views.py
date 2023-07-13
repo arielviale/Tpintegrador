@@ -6,10 +6,12 @@ from django.http            import HttpResponse
 from django.shortcuts       import render
 
 
+# !!!!FIJATE QUE TENES QUE TENER UNA BASE , SINO NO TE VA A FUNCIONAR
+
 class CocheListView(ListView):
     model = Coche
     template_name = 'coche.html'
-    context_object_name = 'coches'
+
 
 class CocheDetailView(DetailView):
     model = Coche
