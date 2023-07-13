@@ -16,4 +16,16 @@ class Coche(models.Model):
             (field.verbose_name, getattr(self, field.name))
             for field in self._meta.fields[1:]
         ]
-        
+from django.db import models
+from auto_app.models import Coche
+
+class Venta(models.Model):
+    coche = models.ForeignKey(Coche, on_delete=models.CASCADE, related_name="ventas")
+    fecha = models.DateTimeField(auto_now_add=True)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+
+    class Meta:
+        db_table = "ventas_table"
+
+    def __str__(self):
+        return f"Venta de {self.coche} por {self.precio}"

@@ -1,10 +1,10 @@
 from django.contrib import admin
-from.models import Coches
+from.models import Coche
 
 # Register your models here.
-from .models import Coches
+from .models import Coche
 
 
-@admin.register(Coches)
+@admin.register(Coche)
 class CochesAdmin(admin.ModelAdmin):
     ...
