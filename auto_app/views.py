@@ -8,19 +8,13 @@ from django.shortcuts       import render
 
 # !!!!FIJATE QUE TENES QUE TENER UNA BASE , SINO NO TE VA A FUNCIONAR
 class CocheBaseView(View):
-    template_name = 'coche.html'
+    template_name = 'coches.html'
     model = Coche
     fields = '__all__'
     success_url = reverse_lazy('coche:all')
     
 
-class CocheListView(ListView):
-    model = Coche
-    template_name = 'coche.html'
-
-
-
-class CocheListView(CocheListView,ListView):
+class CocheListView(CocheBaseView,ListView):
     ...
 
     

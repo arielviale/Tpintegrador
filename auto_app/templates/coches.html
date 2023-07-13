@@ -6,6 +6,19 @@
     <title>inicio para los coches ! cambialo por favor</title>
 </head>
 <body>
-    
+    <main>
+        <h1>ESTO ES A MODO DE EJEMPLO</h1>
+
+        {% for coche in coche_list%}
+        <div class="list">
+            <span>
+                <p>{{forloop.counter}}</p>
+            </span>
+            <span>
+                <p>{{coche.nombre}}</p>
+            </span>
+        </div>
+        {% endfor %}
+</main>
 </body>
 </html>
