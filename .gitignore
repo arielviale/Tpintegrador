@@ -1,1 +1,15 @@
 venv/
+# Ignorar archivos de migración
+/migrations/
+
+# Ignorar archivos de configuración local
+/local_settings.py
+
+# Ignorar archivos de caché
+*.pyc
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de respaldo
+*~
