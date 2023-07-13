@@ -1,54 +1,35 @@
-from .models       import Coche
-from django.urls   import reverse_lazy
-from django.views.generic import View
+from django.views           import View
+from django.urls            import reverse_lazy
+from django.views.generic   import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from .models                import Coche, Venta
+from django.http            import HttpResponse
+from django.shortcuts       import render
 
-from auto_app.models import Coche, Venta
-from django.views.generic.list     import ListView
-from django.views.generic.edit     import DeleteView, UpdateView, CreateView
-from django.views.generic.detail   import DetailView
 
-from auto_app.models  import Venta 
-from django.urls import path
-class CocheBaseView(View):
+class CocheListView(ListView):
+    model = Coche
     template_name = 'coche.html'
-    model       = Coche
-    fields      = '__all__'
+    context_object_name = 'coches'
+
+class CocheDetailView(DetailView):
+    model = Coche
+    template_name = 'coche_detail.html'
+    context_object_name = 'coche'
+
+class CocheCreateView(CreateView):
+    model = Coche
+    template_name = 'coche_create.html'
+    fields = '__all__'
+    extra_context = {
+        "tipo": "Create Coche"
+    }
     success_url = reverse_lazy('coche:all')
 
-class CocheListView(CocheBaseView, ListView):
-    ...
-        
-    
-class CocheDetailView(CocheBaseView, DetailView):
-    template_name = 'coche_detail.html'
-    
-    
-class CocheCreateView(CocheBaseView, CreateView):
+class CocheUpdateView(UpdateView):
+    model = Coche
     template_name = 'coche_create.html'
-    extra_contex = {
-        "tipo": "Create Coche"
-    }    
-class CocheUpdateView(CocheBaseView,View):
-    template_name = 'coche_create.html'
-    extra_contex = {
+    fields = '__all__'
+    extra_context = {
         "tipo": "Update coche"
     }
-
-class CocheDeleteView(CocheBaseView,View):
-    template_name = 'coche_delete.html'
-    extra_contex = {
-        "tipo": "Delete coche"
-    }
-class VentaView(View):
-    def get(self, request):
-        # Lógica para mostrar la página de venta de coches
-        return render(request, 'venta.html')
-
-    def post(self, request):
-        # Lógica para procesar la venta de un coche
-        return HttpResponse('Venta procesada correctamente')
-
-urlpatterns = [
-    path("venta/", VentaView.as_view(), name="venta"),
-    # ...
-]
+    success_url = reverse_lazy('coche:all')

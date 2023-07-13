@@ -1,4 +1,5 @@
-from django.db import models
+from django.db         import models
+from auto_app.models   import Coche
 
 class Coche(models.Model):
     nombre = models.CharField(max_length=200)
@@ -16,8 +17,7 @@ class Coche(models.Model):
             (field.verbose_name, getattr(self, field.name))
             for field in self._meta.fields[1:]
         ]
-from django.db import models
-from auto_app.models import Coche
+ 
 
 class Venta(models.Model):
     coche = models.ForeignKey(Coche, on_delete=models.CASCADE, related_name="ventas")

@@ -1,11 +1,10 @@
+from django.contrib     import admin
+from django.urls        import path , include
 
-from django.contrib import admin
-from django.urls import path , include
-
-from .views import AutoView
-from .views import AutoAcerca
-from .views import AutoCatalogo
-from .views import AutoContacto
+from .views             import AutoView
+from .views             import AutoAcerca
+from .views             import AutoCatalogo
+from .views             import AutoContacto
 
 urlpatterns = [
     path('admin/', admin.site.urls),

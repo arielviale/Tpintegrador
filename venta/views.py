@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic     import TemplateView
 
 class AutoView(TemplateView):
     template_name = "index.html"
@@ -9,7 +9,7 @@ class AutoCatalogo(TemplateView):
 class AutoContacto(TemplateView):
     template_name = "contacto.html"
 
-class VentaView(View):
+class VentaView(TemplateView):
     def get(self, request):
         # Lógica para mostrar la página de venta de coches
         return render(request, 'venta.html')
