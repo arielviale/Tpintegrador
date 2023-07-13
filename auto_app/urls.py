@@ -17,7 +17,3 @@ urlpatterns = [
     path("<int:pk>/delete/", CocheDeleteView.as_view(), name="delete")
 ]
 
-urlpatterns += [
-    path("coche/", include("auto_app.urls")),
-    path("admin/", admin.site.urls),
-]

@@ -8,17 +8,3 @@ class AutoCatalogo(TemplateView):
     template_name = "catalogo.html"
 class AutoContacto(TemplateView):
     template_name = "contacto.html"
-
-class VentaView(TemplateView):
-    def get(self, request):
-        # Lógica para mostrar la página de venta de coches
-        return render(request, 'venta.html')
-
-    def post(self, request):
-        # Lógica para procesar la venta de un coche
-        return HttpResponse('Venta procesada correctamente')
-
-urlpatterns = [
-    path("venta/", VentaView.as_view(), name="venta"),
-    # ...
-]
