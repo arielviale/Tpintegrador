@@ -1,5 +1,4 @@
-from django.db         import models
-from auto_app.models   import Coche
+from django.db import models
 
 class Coche(models.Model):
     nombre = models.CharField(max_length=200)
@@ -20,7 +19,7 @@ class Coche(models.Model):
  
 
 class Venta(models.Model):
-    coche = models.ForeignKey(Coche, on_delete=models.CASCADE, related_name="ventas")
+    coche = models.ForeignKey("auto_app.Coche", on_delete=models.CASCADE, related_name="ventas")
     fecha = models.DateTimeField(auto_now_add=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
 

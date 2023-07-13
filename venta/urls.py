@@ -1,16 +1,13 @@
-from django.contrib     import admin
-from django.urls        import path , include
+from django.urls import path
+from .views import CocheBaseView, CocheListView, CocheDetailView, CocheCreateView, CocheUpdateView, CocheDeleteView, VentaView
 
-from .views             import AutoView
-from .views             import AutoAcerca
-from .views             import AutoCatalogo
-from .views             import AutoContacto
+app_name = "coche"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", AutoView.as_view(), name = "inicio"),
-    path("acerca/", AutoAcerca.as_view(), name="acerca"),
-    path("catalogo/", AutoCatalogo.as_view(), name="catalogo"),
-    path("contacto/", AutoContacto.as_view(), name="contacto"),
-    path("coche/", include("auto_app.urls")),
+    path("", CocheListView.as_view(), name="all"),
+    path("venta/", VentaView.as_view(), name="venta"),
+    path("create/", CocheCreateView.as_view(), name="create"),
+    path("<int:pk>/detail/", CocheDetailView.as_view(), name="detail"),
+    path("<int:pk>/update/", CocheUpdateView.as_view(), name="update"),
+    path("<int:pk>/delete/", CocheDeleteView.as_view(), name="delete")
 ]
