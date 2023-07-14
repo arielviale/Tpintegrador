@@ -1,5 +1,5 @@
-from django.urls import path , include
-from .views import AutoAcerca , AutoCatalogo ,AutoContacto, AutoView
+from django.urls   import path , include
+from .views        import AutoAcerca , AutoCatalogo ,AutoContacto, AutoView
 
 
 urlpatterns = [
