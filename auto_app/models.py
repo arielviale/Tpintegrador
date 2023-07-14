@@ -28,3 +28,9 @@ class Venta(models.Model):
 
     def __str__(self):
         return f"Venta de {self.coche} por {self.precio}"
+    
+    def get_fields(self):
+        return [
+            (field.verbose_name, getattr(self, field.name))
+            for field in self._meta.fields[1:]
+        ]

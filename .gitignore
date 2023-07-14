@@ -13,3 +13,4 @@ venv/
 
 # Ignorar archivos de respaldo
 *~
+source
