@@ -7,5 +7,5 @@ urlpatterns = [
     path("acerca/", AutoAcerca.as_view(), name="acerca"),
     path("catalogo/", AutoCatalogo.as_view(), name="catalogo"),
     path("contacto/", AutoContacto.as_view(), name="contacto"),
-    path("coche",include("auto_app.urls")),
+    path("coche/", include("auto_app.urls")),
 ]

@@ -1,13 +1,16 @@
+{% extends 'catalogo.html' %}
+
+{% block content %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio para los coches ! cambialo por favor</title>
+    <title>Optimus Coches</title>
 </head>
 <body>
     <main>
-        <h1>ESTO ES A MODO DE EJEMPLO</h1>
+        <h1>Los mejores Coches del Mercado te los entrega Optimus</h1>
 
         {% for coche in coche_list%}
         <div class="list">
@@ -19,6 +22,7 @@
             </span>
         </div>
         {% endfor %}
-</main>
+    </main>
 </body>
 </html>
+{% endblock  %}
